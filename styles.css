@@ -63,7 +63,7 @@ h2 {
     padding: 20px; /* Ensures padding around the content */
     padding-bottom: 50px; /* Adds extra space at the bottom above the footer */
     margin-bottom: 120px; /* Adds a bottom margin to ensure it does not touch the footer */
-    max-width: 1800px; /* Maximum width to ensure content does not stretch too far on larger screens */
+    max-width: 1500px; /* Maximum width to ensure content does not stretch too far on larger screens */
     margin: auto; /* Centers the content horizontally */
     box-sizing: border-box; /* Includes padding in width calculations */
 }

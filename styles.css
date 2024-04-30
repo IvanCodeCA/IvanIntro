@@ -256,12 +256,12 @@ footer {
     line-height: 1.6;
 }
 #WorkExperience h2, #WorkExperience h3, #WorkExperience h4, #WorkExperience p, #WorkExperience li {
-    font-size: 0.8em; /* Adjust the font size accordingly */
+    font-size: 0.6em; /* Adjust the font size accordingly */
 }
 .job-section ul li {
     /* existing styles */
     word-wrap: break-word; /* Ensure long words do not cause overflow */
 }
 .small-text {
-    font-size: 12px; /* Example smaller font size */
+    font-size: 8px; /* Example smaller font size */
 }

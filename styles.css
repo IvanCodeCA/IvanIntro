@@ -256,7 +256,7 @@ footer {
     line-height: 1.6;
 }
 #WorkExperience h2, #WorkExperience h3, #WorkExperience h4, #WorkExperience p, #WorkExperience li {
-    font-size: 1em; /* Adjust the font size accordingly */
+    font-size: 0.8em; /* Adjust the font size accordingly */
 }
 .job-section ul li {
     /* existing styles */

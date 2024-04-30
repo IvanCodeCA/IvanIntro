@@ -2,19 +2,32 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
     color: #f4f4f4;
-}
-
-.background {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url('office-background.jpg'); /* Make sure this path is correct */
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-image: url('office-background.jpg'); /* Ensure this path is correct */
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    overflow: hidden; /* Prevents any content from spilling over */
 }
 
 .nav {
@@ -26,7 +39,6 @@ html, body {
 .profile-header {
     text-align: center;
     padding: 20px;
-    /* Other styles remain the same */
 }
 
 .profile-pic {
@@ -40,35 +52,44 @@ h1 {
     margin: 0;
 }
 
-.main-content {
-    padding: 2em 15%; /* Adjust the padding to add more space at the top and bottom */
-    max-width: 2200px; /* Set a maximum width if necessary */
-    margin: 0 auto; /* Center the content */
-    box-sizing: border-box; /* Make sure padding is included in width calculations */
-    padding-bottom: 100px; /* Footer height */
+h2 {
+    font-size: 1em; /* Increases the paragraph text size */
+    font-family: 'Ariel', sans-serif; /* Example font, change as you like */
 }
+
+.main-content {
+    flex: 1 0 auto; /* Allows this element to grow and shrink as needed */
+    overflow-y: auto; /* Adds a scrollbar to the main content if content overflows */
+    padding: 20px; /* Ensures padding around the content */
+    padding-bottom: 50px; /* Adds extra space at the bottom above the footer */
+    margin-bottom: 120px; /* Adds a bottom margin to ensure it does not touch the footer */
+    max-width: 1800px; /* Maximum width to ensure content does not stretch too far on larger screens */
+    margin: auto; /* Centers the content horizontally */
+    box-sizing: border-box; /* Includes padding in width calculations */
+}
+
 
 .tabcontent {
-    background: rgba(3, 3, 3, 0.8); /* Semi-transparent background for the text content */
-    margin: 2em 0; /* Adds top and bottom margin for each content section */
-    padding: 1em; /* Adds padding inside the content box */
-    border-radius: 8px; /* Optional: rounds the corners of the content boxes */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
-    overflow-y: auto; /* Adds a scrollbar if content is too long */
-    max-height: 55vh; /* Sets a maximum height to avoid content spilling out */
+    background: rgba(3, 3, 3, 0.8); /* Semi-transparent background for content sections */
+    margin: 2em 0;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Ensures content can scroll within each tab */
+    max-height: 55vh; /* Limits the height of content sections */
 }
 
+
 footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
     left: 0;
+    bottom: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    color: #fff;
-    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
     text-align: center;
-    z-index: 1000; /* Ensure footer is above other content */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* Optional: adds a shadow for a 'lifted' effect */
+    padding: 10px 0;
+    z-index: 1000; /* Ensures footer stays above other elements */
 }
 
 .tablink {
@@ -83,15 +104,23 @@ footer {
 }
 /* Responsive button sizing */
 @media (max-width: 768px) {
-    .tablink {
-        padding: 10px 5px;
-        font-size: smaller; /* Adjust the font size for smaller screens */
+    .main-content {
+        padding: 10px; /* Adjust padding for smaller screens */
+        padding-bottom: 20px; /* Greater padding at the bottom for small screens */
+        margin-bottom: 150px; /* Larger bottom margin for small screens */
     }
-    .tabcontent {
-        padding: 10px; /* Smaller padding on smaller screens */
+
+    .footer-fixed {
+        position: relative; /* Changes footer positioning on small screens */
     }
-    .job-section {
-        flex-direction: column; /* Stack the columns on top of each other on smaller screens */
+
+    .profile-header, .main-content, footer {
+        padding: 10px; /* Adjusts padding for small screens */
+    }
+
+    .tablink, .text-size-controls button {
+        font-size: 14px; /* Adjusts font size for small screens */
+        padding: 8px 16px; /* Adjusts padding for small screens */
     }
 }
 .text-size-controls {
@@ -99,7 +128,7 @@ footer {
     top: 0;
     right: 0;
     padding: 10px;
-    z-index: 10; /* Ensure the controls are above other content */
+    z-index: 10; /* Ensures text size controls are visible and accessible */
 }
 
 .text-size-controls button {
@@ -108,10 +137,17 @@ footer {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    margin-left: 5px; /* Add space between buttons */
+    margin-left: 5px; /* Spaces buttons out */
+}
+
+.text-size-controls span {
+    color: white; /* Label color for better visibility */
+    margin-right: 10px; /* Space between label and buttons */
+    vertical-align: middle; /* Aligns label with buttons */
+    font-size: 1em; /* Matching font size to buttons for consistency */
 }
 .footer-fixed {
-    position: fixed;
+    position: sticky;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -120,6 +156,10 @@ footer {
     text-align: center;
     padding: 10px 0;
     position: fixed;
+    z-index: 10; /* Ensures footer is above other content */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3); /* Adds shadow for better visibility */
+    flex-shrink: 0; /* ensures the footer does not shrink */
+    clear: both; /* Ensures no floating elements interfere with the footer */
 }
 
 /* Button styles to use the background image */
@@ -213,10 +253,4 @@ footer {
 .job-section ul li {
     /* existing styles */
     word-wrap: break-word; /* Ensure long words do not cause overflow */
-}
-.text-size-controls span {
-    color: white; /* Assuming a light color will stand out on your page's background */
-    margin-right: 10px; /* Add some space between the label and the buttons */
-    vertical-align: middle; /* Aligns the label with the buttons vertically */
-    font-size: 1em; /* Set the font size to match your buttons */
 }

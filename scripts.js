@@ -26,3 +26,23 @@ function setTextSize(size) {
         content.style.fontSize = 'large';
     }
 }
+function scrollToFooter() {
+    document.querySelector('footer').scrollIntoView({ behavior: 'smooth' });
+}
+function applySmallText() {
+    const content = document.querySelector('.main-content'); // Adjust the selector as needed
+    content.classList.add('small-text');
+    content.classList.remove('medium-text', 'large-text'); // Assuming you have these classes for other buttons
+}
+
+function applyMediumText() {
+    const content = document.querySelector('.main-content');
+    content.classList.add('medium-text');
+    content.classList.remove('small-text', 'large-text');
+}
+
+function applyLargeText() {
+    const content = document.querySelector('.main-content');
+    content.classList.add('large-text');
+    content.classList.remove('small-text', 'medium-text');
+}

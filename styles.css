@@ -66,6 +66,7 @@ h2 {
     max-width: 1500px; /* Maximum width to ensure content does not stretch too far on larger screens */
     margin: auto; /* Centers the content horizontally */
     box-sizing: border-box; /* Includes padding in width calculations */
+    overflow-x: auto;
 }
 
 
@@ -77,6 +78,7 @@ h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Ensures content can scroll within each tab */
     max-height: 55vh; /* Limits the height of content sections */
+    overflow-x: auto;
 }
 
 
@@ -121,6 +123,12 @@ footer {
     .tablink, .text-size-controls button {
         font-size: 14px; /* Adjusts font size for small screens */
         padding: 8px 16px; /* Adjusts padding for small screens */
+    }
+    .tabcontent {
+        padding: 10px;  
+    }
+    .tabcontent p, .tabcontent li {
+        font-size: 14px;
     }
 }
 .text-size-controls {
@@ -248,9 +256,12 @@ footer {
     line-height: 1.6;
 }
 #WorkExperience h2, #WorkExperience h3, #WorkExperience h4, #WorkExperience p, #WorkExperience li {
-    font-size: 1.3em; /* Adjust the font size accordingly */
+    font-size: 1em; /* Adjust the font size accordingly */
 }
 .job-section ul li {
     /* existing styles */
     word-wrap: break-word; /* Ensure long words do not cause overflow */
+}
+.small-text {
+    font-size: 12px; /* Example smaller font size */
 }

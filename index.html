@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoi Wai Chum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="profile-header">
+            <div class="text-size-controls">
+                <span>Text Size:</span>
+                <button onclick="setTextSize('small')">S</button>
+                <button onclick="setTextSize('medium')">M</button>
+                <button onclick="setTextSize('large')">L</button>
+            </div>
+            <img src="profile.jpg" alt="Hoi Wai Chum" class="profile-pic">
+            <h1>Hoi Wai Chum</h1>
+            <nav>
+                <button class="tablink" onclick="openPage('Summary', this)">Summary</button>
+                <button class="tablink" onclick="openPage('WorkExperience', this)">My Work Experience</button>
+                <button class="tablink" onclick="openPage('Skills', this)">Skills</button>
+                <button class="tablink" onclick="openPage('Certifications', this)">Certifications</button>
+            </nav>
+        </div>
+        <div class="main-content" id="main-content">
+            <!-- Summary -->
+            <section id="Summary" class="tabcontent">
+                <h2>Summary</h2>
+                <p>IT professional with three years of experience in project and product/application management within the banking sector. Hold a Bachelor of Business Administration from the National Taiwan University of Science and Technology and a certified Project Management Professional (PMP). My expertise spans across various methodologies like SDLC, Agile, and DevOps, and I am skilled in Python, SQL, and Tableau, among other technologies.</p>
+                <p>I am fluent in Cantonese, English, and Mandarin, which aids my ability to coordinate with diverse teams and stakeholders effectively. I am deeply committed to leveraging technology to improve business outcomes and customer satisfaction. My goal is to continue developing my skills and contribute to the evolution of digital banking services.</p>
+            </section>
+            <!-- Work Experience -->
+            <section id="WorkExperience" class="tabcontent">
+                <h2>Work Experience</h2>
+                <div>
+                    <h3>DBS Bank</h3>
+                    <p><strong>Title : Digital Banking IT SME and Production Manager</strong> (Aug 2023 - Present)</p>
+                    <div class="job-section">
+                        <h4>Duties</h4>
+                        <ul>
+                            <li>Primary liaison between IT and business units, managing communication and issue resolution.</li>
+                            <li>Lead digital banking projects from initiation to closure using Agile methodologies.</li>
+                            <li>Act as a SME to provide technical insight to Business unit.</li>
+                            <li>Analyze the RCA of incidents which occur in production environment.</li>
+                            <li>Coordinate with other departments to deploy new changes in applications and systems.</li>
+                        </ul>
+                        <h4>Achievements</h4>
+                        <ul>
+                            <li>Improved issue resolution efficiency by 15% through effective communication strategies.</li>
+                            <li>Achieved a 10% improvement in adapting to market changes through proactive project management.</li>
+                            <li>Reducing the time to implement fixes and enhancements by 12%.</li>
+                            <li>Contributed to a 3% increase in customer satisfaction and a 74% grow in digital banking usage.</li>
+                            <li>Achieving a 18% reduction in recurring system issues.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3>Citibank</h3>
+                    <p><strong>Title : IT Project Manager and Application Manager</strong> (Sep 2021 - Aug 2023)</p>
+                    <div class="job-section">
+                        <h4>Duties</h4>
+                        <ul>
+                            <li>Managed a comprehensive local banking application comprising 25 diverse products, including Cards, Online Banking, New-to-Bank (NTB) services, and Mortgages. </li>
+                            <li>Oversaw integration and security enhancements for the Internet Banking System.</li>
+                            <li>Led IT and business projects from the initiation through to the closing stages.</li>
+                            <li>Collaborated with regional teams to ensure the application was aligned with corporate standards./li>
+                            <li>Analyzed Business Requirements Documents (BRD) and liaised with third-party vendors to confirm the feasibility of business requirements. </li>
+                            <li>Partnered closely with various departments to implement new changes in applications and systems.</li>
+                            <li>Evaluated system infrastructure and implemented improvements to boost efficiency and reliability.</li>
+                            <li>Conducted User Acceptance Testing (UAT) and production tests to verify that new changes were problem-free and met acceptance criteria.</li>
+                        </ul>
+                        <h4>Achievements</h4>
+                        <ul>
+                            <li>Orchestrated a 4% reduction in incident rates through strategic vendor management and robust cross-functional collaboration.</li>
+                            <li>Successfully reduced system vulnerabilities by 10%, strengthening the overall security posture.</li>
+                            <li>Collaborated effectively with regional teams and DBS during a high-stakes banking divestiture program, managing the transition of 18 banking applications and 100TB of data, achieving 0% data loss and reducing transition risks.</li>
+                            <li>Drove significant enhancements in a major banking application, improving security by 7% and operational efficiency by 11% through detailed vulnerability assessments and targeted remediation strategies.</li>
+                            <li>Achieved a 6% faster project completion rate, markedly increasing stakeholder satisfaction.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Skills -->
+            <section id="Skills" class="tabcontent">
+                <h2>Skills</h2>
+                <p>Programming: Python, SQL, R, HTML, CSS, JavaScript</p>
+                <p>Project Management: Agile, Scrum, Hybrid, Waterfall, FDD, Budget Control, Release Management, Change Management, SDLC, BRD</p>
+                <p>Product Management: Product Life Cycle, Product vision and strategy, Product Design, Business Acumen</p>
+                <p>Technical Skills: Cybersecurity, System Analysis, Risk Management, Statistical Analysis, Identity and Access Management</p>
+                <p>Software: Jira, Planview, IBM WebSphere, O365, PowerBI, Tableau, Finacle, CheckMarx, BlackDuck</p>
+            </section>
+            <!-- Certifications -->
+            <section id="Certifications" class="tabcontent">
+                <h2>Certifications</h2>
+                <p>PMP certified, Google Data Analysis certified.</p>
+                <button onclick="window.open('PMP.pdf')">View PMP Certification</button>
+                <button onclick="window.open('GoogleDataPro.pdf')">View Google Data Professional Certification</button>
+                <button onclick="window.open('Resume.pdf')">View My Resume</button>
+            </section>
+        </div>
+            </section>
+            <!-- Footer -->
+            <footer class="footer-fixed">
+                <p>If you would like to reach me, you may check below.</p>
+                <p>Contact Phone: +1 437 345 8190, Email: <a href="mailto:chumhoiwai520@gmail.com">chumhoiwai520@gmail.com</a>, Linkedin: <a href="https://www.linkedin.com/in/hoi-wai-chum-384975198/">Hoi Wai Chum on LinkedIn</a></p>
+                <p>© 2024 Hoi Wai Chum. All rights reserved.</p>
+            </footer>
+        </div>
+        <script src="scripts.js"></script>
+</body>
+</html>
